@@ -1,0 +1,439 @@
+/* 
+Theme Name: Bootstrap 4 Sass
+Description: Bootstrap 4 with Sass
+*/
+
+// import files
+@import "import";
+
+/* GENERAL STYLES
+-------------------------------------------------*/
+
+body {
+    background: $white;
+}
+
+#main {
+    min-height: 80vh;
+}
+
+/* COLORS 
+--------------------------------------------------*/
+
+a {
+    // color: $accent-shade;
+    color: #000000;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.bg-inverse {
+    background: $primary-shade !important;
+}
+
+.site-footer {
+    background: $accent-shade !important;
+}
+
+.menu--main li a {
+    color: $primary-shade;
+}
+
+.menu--account li a {
+    color: $primary-shade;
+}
+
+.site-name-slogan a {
+    text-decoration: none;
+}
+
+.card-group img {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.card-group .field--type-image {
+    margin: 0
+}
+
+.slick {
+    width: 100%;
+}
+
+.slick>div {
+    margin: 0 15px;
+}
+
+
+.lang-list {
+    padding: 0;
+    li { display: none;}
+    li:not(.is-active) {
+        display: block;
+    }
+    li {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+        padding-right: 5px!important;
+    }
+}
+
+// info - social 
+.shrink {padding:20px 0; }
+
+.info_wrapper{
+    position: sticky;
+    top: 0;
+    background-color: #c7c7c7;
+    z-index: 10;
+    
+    &.large {
+        height: 75px;
+    }
+    &.large img {
+    //   margin-top: 30px;
+    }
+    &.large li {
+        margin-top: 52px;
+    }
+    
+    /* info_wrapper small */
+    
+    &.small {
+        height: 50px;
+    }
+    &.small img {
+        
+    }
+    &.small li {
+        margin-top: 17px;
+    }
+}
+.region-info { padding: 0 15px; height: 100%;}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    img {
+        width: 140px;
+    }
+}
+
+#block-siteinfo {
+    padding: 0;
+}
+#block-bootstrap-sass-main-menu {     background-image: linear-gradient(#c7c7c7, #909090);}
+.menu_k9 {
+    z-index: 1;
+    position: sticky;
+    // top: 42px;
+}
+.info_wrapper {
+    .social_info {
+        .icon::before {
+            margin-right: 20px;
+            font-family: "icomoon";
+        }
+        a:not(:first-child) {
+            margin-left: 20px;
+        }    
+        .field {
+            display: inline;
+        }
+        .social_phone::before {
+            content: "\e942";
+        }
+        .social_email::before {
+            content: "\e945";
+        }
+        .social_address::before {
+            content: "\e947";
+        } 
+    }
+
+    .social_icons {
+        a:not(:last-child) {
+            margin-right: 20px;
+        }
+        .social_facebook::before {
+            content: "\ea90";
+            font-family: "icomoon";
+        }
+        
+        .social_instagram::before {
+            content: "\ea92";
+            font-family: "icomoon";
+        }
+        
+        .social_linkedin::before {
+            content: "\eaca";
+            font-family: "icomoon";
+        }    
+    }
+    .social_icons .icon {
+        /*   with:40px; */
+        /*   height: 40px; */
+          padding: 0 5px;
+          background:
+            linear-gradient(to right, transparent 2px, transparent 2px) 0 0,
+        /*     linear-gradient(to right, transparent 2px, transparent 2px) 0 100%, */
+        /*     linear-gradient(to left, transparent 2px, transparent 2px) 100% 0, */
+            linear-gradient(to left, transparent 2px, transparent 2px) 100% 100%,
+            linear-gradient(to bottom, transparent 2px, transparent 2px) 0 0,
+        /*     linear-gradient(to bottom, transparent 2px, transparent 2x) 100% 0, */
+        /*     linear-gradient(to top, transparent 2px, transparent 2px) 0 100%, */
+            linear-gradient(to top, transparent 2px, transparent 2px) 100% 100%;
+        
+          background-repeat: no-repeat;
+          background-size: 10px  10px;
+    }
+}
+
+.navbar-nav {
+    border-right: 2px solid;
+    a {
+        padding: 0;
+        border-bottom: 3px solid transparent;
+        &:hover {
+            border-color: green;
+        }
+    }
+}
+
+.slide-in-content {
+    display: flex;
+    .info_wrapper {
+        display: none!important;
+    }
+    .block-language {
+        display: inline-flex;
+        align-items: center;
+        order: 2;
+    }
+}
+
+.region-home-full-width-big-image {
+    .wrapper {
+        max-width: 60%;
+        .field--name-field-home-promo-models-button {
+            justify-content: center;
+            display: flex;
+            margin-top: 20px;
+            a {
+                display: block;
+                border: 2px solid;
+                padding: 10px 20px;
+            }
+        }
+    }
+   
+    img {
+        object-fit: cover;
+        max-width: 100%;
+    }
+   
+}
+
+// footer
+#block-siteinfo-2 {
+    width: 100%;
+    .info_wrapper {background: transparent;}
+}
+
+.social_facebook,
+.social_instagram,
+.social_linkedin {
+    &:before{
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;            
+        border: 1px solid;
+        border-radius: 100%;
+        width: 29px;
+        height: 26px;    
+    }
+    &:hover:before {
+        background: pink;
+        color:blue;
+    }
+}
+.social_phone,
+.social_email,
+.social_address {
+    &:before {
+        transition: all .2s ease-in-out; 
+    }
+    &:hover:before { transform: scale(1.2); }
+}
+
+#block-services {
+    margin: 50px 0px;
+    h2 {text-align: center; padding-bottom: 15px;}
+    .field--name-field-service-description {display:block;text-align: center;}
+    .field--name-field-service-services .paragraph {
+        border: 1px solid red;
+        border-radius: 2px;
+        width: 100%;
+        background: #c7c7c7;
+    }
+    // .field--name-field-service-services > div:nth-child(odd) .paragraph {
+    //      background: red;
+    // }
+}
+
+
+.paragraph--type--service {
+    display: block;
+    text-align: center;
+    border: 1px #ffffff solid;
+    padding: 0px 0px 10px 0px;
+    background: #eaeaea;
+    transition-duration: 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.paragraph--type--service .field--name-field-service-description {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    -webkit-transition: top 0.6s ease-in-out;
+    left: 0;
+    color: #f7f7f7;
+    text-decoration: none;
+}
+
+.paragraph--type--service:hover .field--name-field-service-description {
+    top: 0;
+    display: block;
+}
+
+
+.paragraph--type--service:hover {
+border-color: #b32f01;
+background: #ffffff;
+-webkit-transition: color background 0.2s ease-in-out;
+-moz-transition: color background 0.2s ease-in-out;
+-ms-transition: color background -0.8s ease-in-out;
+-o-transition: color background 0.2s ease-in-out;
+transition: color background 0.2s ease-in-out;
+cursor: pointer;
+color: #cacaca;
+}
+
+#webform-submission-contact-add-form {
+    // contact
+    fieldset {
+        width: 48%;
+        display: inline-block;
+        &:nth-child(5) { 
+            width: 96.7%;
+            padding-right: 0px!important;
+        }
+        &:nth-child(odd) {
+            // background-color: pink;
+            padding-right: 15px;
+        }
+        &:nth-child(even) {
+            // background-color: rgb(100, 50, 58);
+            padding-left: 15px;
+        }
+    }
+
+     input {
+      
+        // show success!
+        // &:invalid {
+        //     display: none;
+        // }
+        .requirements {
+            padding: 0 30px 0 50px;
+            color: #999;
+            max-height: 0;
+            transition: 0.28s;
+            overflow: hidden;
+            color: red;
+            font-style: italic;
+          }
+    }
+  
+    .form-actions {
+        text-align: center;
+        .btn-primary {
+            color: #000;
+            background-color: transparent;
+            border-color: #e9ecef;
+            margin: 20px 0px;
+        }
+    }
+}
+
+
+/* On screens that are 992px or less, set the background color to blue */
+// @media screen and (max-width: 992px) {
+//     body {
+//       background-color: blue;
+//     }
+// }
+  
+/* On screens that are 768px or less, set the background color to olive */
+@media screen and (max-width: 767.7px) {
+    #webform-submission-contact-add-form {
+        // contact
+        fieldset {
+            width: unset;
+        }   
+    }
+ 
+    .info_wrapper .social_info .icon::before {margin-right: 10px; font-size: 18px;} 
+     
+    #block-bootstrap-sass-main-menu { background-image: unset!important}    ;
+    .slide-in-content {
+        .block-language {text-align: right;}
+        .social_info {
+            padding-top: 20px;
+            display: block!important;
+            a:not(:first-child) {margin-left: 0;}
+            a {margin-bottom: 10px;}
+            .icon {
+                span {
+                    display: block!important;
+                }
+                &:before {margin-left: 0;}
+            }
+        }
+        .social_icons {
+            padding-top: 20px;
+            display: flex!important;
+        }
+        .info_wrapper {
+            display: block!important;
+        }
+        display: unset;
+
+        .block-language {
+            display: unset;
+            align-items: unset;
+            order: unset;
+        }        
+    }
+
+    #block-bootstrap-sass-main-menu {
+        ul.navbar-nav li { padding: 0;}
+    }
+
+}
+@media screen and (max-width: 991px) {
+    #block-services {
+        .field--name-field-service-services > div:nth-child(even) .paragraph {
+            background: red;
+            margin: 40px 0;
+        }
+    }
+}

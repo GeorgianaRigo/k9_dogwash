@@ -1,0 +1,15 @@
+global-styling:
+  version: VERSION
+  js: 
+    js/popper.min.js: {}
+    js/bootstrap.min.js: {}
+    js/global.js: {}
+    js/slick/slick.min.js: {}
+  css:
+    component:
+      css/style.css: {}
+      fonts/icomoon/style.css: {}    
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal

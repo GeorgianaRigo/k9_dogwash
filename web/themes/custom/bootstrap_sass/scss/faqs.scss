@@ -1,0 +1,66 @@
+// faqs page 
+#accordion_faqs {
+    button { box-shadow: none;}
+    .closed {
+        .vertical {
+          transition: all 0.5s ease-in-out;
+          transform: rotate(-90deg);
+        }
+        .horizontal {
+          transition: all 0.5s ease-in-out;
+          transform: rotate(-90deg);
+          opacity: 1;
+        }
+    }
+    
+    .opened {
+        opacity: 1;
+        .vertical {
+            transition: all 0.5s ease-in-out;
+            transform: rotate(90deg);
+        }
+        .horizontal {
+            transition: all 0.5s ease-in-out;
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+    }
+    
+    // .circle-plus {
+    //     height: 1em;
+    //     width: 1em;
+    //     // font-size: 1em;
+    //     opacity: .7;
+    // }
+
+    .circle-plus {
+        width: 45px;
+    }
+    
+    .circle-plus .circle {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        //     width: 2.55em;
+        //     height: 2.5em;
+        //     border-radius: 100%;
+        //     border: solid .5em #DFDAD7;
+    }
+    .circle-plus .circle .horizontal {
+        position: absolute;
+        background-color: red;
+        width: 15px;
+        height: 3px;
+        left: -2%;
+        top: 37%;
+    }
+    .circle-plus .circle .vertical {
+        position: absolute;
+        background-color: red;
+        width: 3px;
+        height: 15px;
+        left: 37%;
+        top: -2%;
+    }
+      
+}
