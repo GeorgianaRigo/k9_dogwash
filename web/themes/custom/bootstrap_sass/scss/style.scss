@@ -150,10 +150,7 @@ a {
         .icon::before {
             margin-right: 20px;
             font-family: "icomoon";
-        }
-        .icon:last-child:before {
-            margin-right: 0px;
-        }        
+        }   
         a:not(:first-child) {
             margin-left: 20px;
         }    
