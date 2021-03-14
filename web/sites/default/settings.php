@@ -807,8 +807,9 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
-
-
+if ( isset($GLOBALS['request']) && '/web/index.php' === $GLOBALS['request']->server->get('SCRIPT_NAME') ) {
+  $GLOBALS['request']->server->set('SCRIPT_NAME', '/index.php');
+}
 
 $config_directories['sync'] = 'sites/default/files/config_-ddZT8zZaJdYRvrjKkooANN_rOT62CWuOWQOyJJbjNCBuphhjS-uUvJxDht2x72ZhpwUuthegg/sync';
 // $settings['config_sync_directory'] = 'sites/default/files/config_0yyHSzExk85_skf6TGRWcgQVJvP4MXCRhwVRblOomOY8rMIqURUmSDV-f09ry6lVQeK3s4rkqQ/sync';
