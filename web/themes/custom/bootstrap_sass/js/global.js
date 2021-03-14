@@ -8,20 +8,23 @@
   'use strict';
   $(document).ready(function() {
     // burger effect
-    if( window.innerWidth <= 768 ) {
+    if( window.innerWidth <= 991 ) {
 
       $('.burger-mobile').click(function() {
         $('.slide-in').toggleClass('show');
+        $('body').toggleClass('not_scolling');
         $(this).find('#nav-icon2').toggleClass('open');
       });
 
       var height_info = $('.info_wrapper').height(); 
       $('.menu_k9 section').css("top", height_info);
-      // if( window.innerWidth <= 768 ) {
-        $('.slide-in-content').css({ height: 'calc(100vh - ' + height_info + 'px)' } );
-      // }
+      // if( window.innerWidth <= 991 ) {
+        $('.slide-in-content').css({ height: '100vh', position: 'fixed' } );
+
+    }else {
+      $('body').addClass('scrolled scrollup');
     }
-    
+ 
     // if( window.innerWidth >= 769 ) {
     //   $(document).on("scroll", function() {
     //     if($(document).scrollTop()>100) {

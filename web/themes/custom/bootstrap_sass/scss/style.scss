@@ -20,6 +20,24 @@ body {
 /* COLORS 
 --------------------------------------------------*/
 
+.not_scolling {
+    overflow: hidden;
+}
+.scrolldown,
+.scrolled.scrollup {
+    #page-wrapper > a {
+        max-width: 100px;        
+        transition-delay: 2s;
+    }
+}
+#page-wrapper > a {
+    position: fixed;
+    left: 15px;
+    z-index: 25;
+    padding: 0;
+    // margin-left: 20px;
+    margin-right: 0;
+}
 a {
     // color: $accent-shade;
     color: #000000;
@@ -93,9 +111,6 @@ a {
     &.large {
         height: 75px;
     }
-    &.large img {
-    //   margin-top: 30px;
-    }
     &.large li {
         margin-top: 52px;
     }
@@ -112,7 +127,7 @@ a {
         margin-top: 17px;
     }
 }
-.region-info { padding: 0 15px; height: 100%;}
+.region-info { padding: 0 15px; height: 52px;}
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -136,6 +151,9 @@ a {
             margin-right: 20px;
             font-family: "icomoon";
         }
+        .icon:last-child:before {
+            margin-right: 0px;
+        }        
         a:not(:first-child) {
             margin-left: 20px;
         }    
@@ -219,7 +237,8 @@ a {
         max-width: 60%;
         .field--name-field-home-promo-models-button {
             justify-content: center;
-            display: flex;
+            // display: flex;
+            display: none;
             margin-top: 20px;
             a {
                 display: block;
@@ -232,6 +251,7 @@ a {
     img {
         object-fit: cover;
         max-width: 100%;
+        max-height: 450px;
     }
    
 }
@@ -374,25 +394,41 @@ color: #cacaca;
     }
 }
 
-
-/* On screens that are 992px or less, set the background color to blue */
-// @media screen and (max-width: 992px) {
-//     body {
-//       background-color: blue;
-//     }
-// }
-  
-/* On screens that are 768px or less, set the background color to olive */
-@media screen and (max-width: 767.7px) {
+@media screen and (max-width: 991px) {
     #webform-submission-contact-add-form {
         // contact
-        fieldset {
-            width: unset;
-        }   
+        margin-top: 40px;
+        fieldset,
+        fieldset:nth-child(5) {
+            width: 100%;
+        }
+        fieldset:nth-child(even) {
+            padding-left: 0;
+        }
+        fieldset:nth-child(odd) {
+            padding-right: 0;
+        }
     }
- 
+    #block-siteinfo .social_info {
+        width: calc(100% - 100px);
+        position: absolute;
+        right: 0;
+    }
+    #page-wrapper > a {
+        max-width: 100px;
+    }   
+    .info_wrapper {
+        height: 51px;
+    }
+    #block-services {
+        .field--name-field-service-services > div:nth-child(even) .paragraph {
+            background: red;
+            margin: 40px 0;
+        }
+    }
+
     .info_wrapper .social_info .icon::before {margin-right: 10px; font-size: 18px;} 
-     
+         
     #block-bootstrap-sass-main-menu { background-image: unset!important}    ;
     .slide-in-content {
         .block-language {text-align: right;}
@@ -428,12 +464,4 @@ color: #cacaca;
         ul.navbar-nav li { padding: 0;}
     }
 
-}
-@media screen and (max-width: 991px) {
-    #block-services {
-        .field--name-field-service-services > div:nth-child(even) .paragraph {
-            background: red;
-            margin: 40px 0;
-        }
-    }
 }

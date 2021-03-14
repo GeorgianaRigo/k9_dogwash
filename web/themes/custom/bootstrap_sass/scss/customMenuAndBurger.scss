@@ -98,7 +98,7 @@
 
 
 /* On screens that are 768px or less, set the background color to olive */
-@media screen and (max-width: 767.7px) {
+@media screen and (max-width: 991px) {
     .burger-mobile {
       z-index: 10;
       height: 22px;
@@ -176,7 +176,7 @@
             }
           }
           .social_icons {
-            padding-top: 20px;
+            margin-top: 50px;
             display: flex!important;
           }
           .info_wrapper {

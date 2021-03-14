@@ -40,7 +40,7 @@
 #}
 {%
   set classes = [
-    'd-md-flex col info_wrapper px-0',
+    'd-lg-flex col info_wrapper px-0',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -52,21 +52,21 @@
 
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    <div class="h-100 social_info text-center text-md-left d-inline-flex col justify-content-center px-0">
+    <div class="h-100 social_info text-center text-lg-left d-inline-flex col justify-content-center px-0">
       {% if content.field_info_phone.0 is not empty %}
-        <a class="d-flex" href="tel:{{content.field_info_phone.0 }}"><div class="icon d-flex align-items-center social_phone"><span class="d-none d-md-block">{{content.field_info_phone}}</span></div></a>
+        <a class="d-flex" href="tel:{{content.field_info_phone.0 }}"><div class="icon d-flex align-items-center social_phone"><span class="d-none d-lg-block">{{content.field_info_phone}}</span></div></a>
       {% endif %}
 
       {% if content.field_info_email.0 is not empty %}
-        <a class="d-flex" href="mailto:{{content.field_info_email.0 }}"><div class="icon d-flex align-items-center social_email"><span class="d-none d-md-block">{{content.field_info_email}}</span></div></a>
+        <a class="d-flex" href="mailto:{{content.field_info_email.0 }}"><div class="icon d-flex align-items-center social_email"><span class="d-none d-lg-block">{{content.field_info_email}}</span></div></a>
       {% endif %}
 
       {% if content.field_social_address.0 is not empty %}
-        <a class="d-flex" href="{{content.field_social_address.0['#url'].uri}}"><div class="icon d-flex align-items-center social_address"><span class="d-none d-md-block">{{content.field_social_address.0['#title']}}</span></div></a>
+        <a class="d-flex" href="{{content.field_social_address.0['#url'].uri}}"><div class="icon d-flex align-items-center social_address"><span class="d-none d-lg-block">{{content.field_social_address.0['#title']}}</span></div></a>
       {% endif %}
     </div>
 
-    <div class="social_icons d-none d-md-flex justify-content-center align-items-center col-md-auto px-0">
+    <div class="social_icons d-none d-lg-flex justify-content-center align-items-center col-lg-auto px-0">
       {% if content.field_social_facebook.0 is not empty %}
         <a href="{{content.field_social_facebook.0['#url'].uri}}"><div class="icon social_facebook"></div></a>
       {% endif %}
