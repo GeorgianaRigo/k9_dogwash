@@ -22,7 +22,10 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/devel": "^4.1",
+        "drupal/metatag": "^1.15",
         "drupal/paragraphs": "^1.12",
+        "drupal/schema_metatag": "^2.1",
+        "drupal/token": "^1.9",
         "drupal/twig_tweak": "2.9",
         "drupal/webform": "^6.0"
     },
