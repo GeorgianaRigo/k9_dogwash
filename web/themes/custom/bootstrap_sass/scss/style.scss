@@ -14,7 +14,82 @@ body {
 }
 
 #main {
-    min-height: 80vh;
+    min-height: 80.5vh;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+h1 {
+    background: transparent;
+}
+.path-frontpage {
+    h1 {display: none;}
+    .paw_home{ display: block;}
+    .ajax-loader{
+        position: absolute;
+        top: 0%;
+        left: 56%;
+        transform-origin: 50% 50%;
+        transform: rotate(90deg) translate(-50%, 0%);
+        font-size: 56px;
+        width: 1em;
+        height: 3em;
+        color:#ED008A;
+    
+        .paw {
+            width: 1em;
+            height: 1em;
+            animation: 4050ms pawAnimation ease-in-out infinite;
+            opacity: 0;
+            
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+            
+            .icon{
+                fill: currentColor;
+            }
+    
+            &:nth-child(odd){
+                transform: rotate(-10deg);
+            }
+    
+            &:nth-child(even){
+                transform: rotate(10deg) translate(125%, 0);
+            }
+    
+            @for $i from 1 through 8 {
+                &:nth-child(#{$i}){
+                    animation-delay: #{ (($i * -1)+8)*0.45 }s;
+                    // animation-delay: 5s;
+                }
+            }
+    
+            .no-cssanimations &{
+                opacity: 1;
+            }
+        }
+    }
+    
+    @keyframes pawAnimation {
+        0%{
+            opacity: 1;
+        }
+        50%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0;
+        }
+    }    
+}
+
+.paw_home{ display: none;}
+
+
+.node_content {
+    padding: 35px 0;
 }
 
 /* COLORS 
@@ -51,15 +126,23 @@ a {
 }
 
 .site-footer {
-    background: $accent-shade !important;
+    background: $gray;
 }
 
 .menu--main li a {
-    color: $primary-shade;
+    color: #000;
+    &:active {
+        font-weight: 600;
+    }
 }
 
+a:hover {
+    color: $k_blue;
+}
+
+
 .menu--account li a {
-    color: $primary-shade;
+    color: $k_blue;
 }
 
 .site-name-slogan a {
@@ -120,9 +203,7 @@ a {
     &.small {
         height: 50px;
     }
-    &.small img {
-        
-    }
+
     &.small li {
         margin-top: 17px;
     }
@@ -132,14 +213,22 @@ a {
     display: flex;
     align-items: center;
     img {
-        width: 140px;
+        width: 100px;
+        padding-top: 10px;
     }
 }
 
 #block-siteinfo {
     padding: 0;
 }
-#block-bootstrap-sass-main-menu {     background-image: linear-gradient(#c7c7c7, #909090);}
+#block-bootstrap-sass-main-menu {     
+    background-image: linear-gradient(#c7c7c7, $gray);
+    ul {
+        .is-active {
+            font-weight: 600;
+        }
+    }
+}
 .menu_k9 {
     z-index: 1;
     position: sticky;
@@ -212,7 +301,7 @@ a {
         padding: 0;
         border-bottom: 3px solid transparent;
         &:hover {
-            border-color: green;
+            border-color: $k_blue;
         }
     }
 }
@@ -253,6 +342,17 @@ a {
    
 }
 
+#block-theoriginalbestdogwash {
+    color: #000;
+    .field--name-body {
+        background-color: rgba(219, 219, 215, 0.7);
+        padding: 20px 40px;
+        min-width: 375px;
+        min-height: 100px;
+    }
+    p { margin-bottom: 5px; }
+
+}
 // footer
 #block-siteinfo-2 {
     width: 100%;
@@ -263,18 +363,18 @@ a {
 .social_instagram,
 .social_linkedin {
     &:before{
-        font-size: 13px;
+        font-size: 10px;
         display: flex;
         justify-content: center;
         align-items: center;            
         border: 1px solid;
         border-radius: 100%;
-        width: 29px;
-        height: 29px;    
+        width: 20px;
+        height: 20px;    
     }
     &:hover:before {
-        background: pink;
-        color:blue;
+        background: #fff;
+        color: #000;
     }
 }
 .social_phone,
@@ -291,14 +391,25 @@ a {
     h2 {text-align: center; padding-bottom: 15px;}
     .field--name-field-service-description {display:block;text-align: center;}
     .field--name-field-service-services .paragraph {
-        border: 1px solid red;
         border-radius: 2px;
+        border: 1px solid $gray;
         width: 100%;
-        background: #c7c7c7;
+        // background: $gray;
+        background: transparent;
+        padding-top: 10px;
+        padding-bottom: 0;
     }
     // .field--name-field-service-services > div:nth-child(odd) .paragraph {
     //      background: red;
     // }
+    .field--name-field-service-title {
+        background-color: rgba(219, 219, 215, 0.7);
+        // background: $gray;
+        // opacity: 0.8;
+        padding: 5px 15px;
+        color: #000;
+        font-weight: 600;
+    }
 }
 
 
@@ -333,19 +444,13 @@ a {
 
 
 .paragraph--type--service:hover {
-border-color: #b32f01;
-background: #ffffff;
--webkit-transition: color background 0.2s ease-in-out;
--moz-transition: color background 0.2s ease-in-out;
--ms-transition: color background -0.8s ease-in-out;
--o-transition: color background 0.2s ease-in-out;
-transition: color background 0.2s ease-in-out;
-cursor: pointer;
-color: #cacaca;
+    cursor: pointer;
 }
 
-#webform-submission-contact-add-form {
+.webform-submission-contact-add-form {
     // contact
+    // padding-top: 80px;
+    
     fieldset {
         width: 48%;
         display: inline-block;
@@ -384,17 +489,39 @@ color: #cacaca;
         text-align: center;
         .btn-primary {
             color: #000;
-            background-color: transparent;
             border-color: #e9ecef;
             margin: 20px 0px;
+            padding: 10px 35px;
+            background: linear-gradient(to left, rgb(255, 255, 255) 50%, $k_blue 50%) right;
+            background-size: 200%;
+            transition: .5s ease-out;
+    
+            &:active {
+                color: #000;
+                border-color: #e9ecef;
+            }
+            &:hover {background-position: left;}
+            &:focus {box-shadow: none!important;}       
         }
     }
 }
 
 @media screen and (max-width: 991px) {
+    .region-home-full-width-big-image {
+        .wrapper {
+            max-width: 100%;
+        }
+    }
+    .slide-in-content .navbar-nav a:hover {
+        border-color: transparent!important;
+    }
+    .slide-in-content ul li a{
+        padding-bottom: 7px;
+    }
     #webform-submission-contact-add-form {
         // contact
-        margin-top: 40px;
+        margin-top: 50px;
+        padding-top: 0;
         fieldset,
         fieldset:nth-child(5) {
             width: 100%;
@@ -419,7 +546,7 @@ color: #cacaca;
     }
     #block-services {
         .field--name-field-service-services > div:nth-child(even) .paragraph {
-            background: red;
+            // background: red;
             margin: 40px 0;
         }
     }
@@ -444,6 +571,14 @@ color: #cacaca;
         .social_icons {
             padding-top: 20px;
             display: flex!important;
+
+            .social_facebook:before,
+            .social_instagram:before, 
+            .social_linkedin:before {
+                width: 26px;
+                height: 26px;
+                font-size: 14px;
+            }
         }
         .info_wrapper {
             display: block!important;
